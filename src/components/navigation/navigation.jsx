@@ -13,6 +13,8 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import CoffeeIcon from '@mui/icons-material/LocalCafe';
 
+import { useColorMode } from '../../context/color-mode/color-mode-context.jsx';
+
 const StyledNavLink = styled(NavLink)(({ theme }) => ({
   textDecoration: 'none',
   marginRight: theme.spacing(2),
@@ -25,7 +27,7 @@ const StyledNavLink = styled(NavLink)(({ theme }) => ({
 
 export const Navigation = () => {
   const [categories, setCategories] = useState([]);
-  const colorMode = 'dark';
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const fetchData = async () => {
     const data = await fetchCategories();
@@ -63,7 +65,7 @@ export const Navigation = () => {
         <Button color="inherit" component={RouterLink} to="/login">
           Login
         </Button>
-        <IconButton sx={{ ml: 1 }} color="inherit">
+        <IconButton sx={{ ml: 1 }} color="inherit" onClick={toggleColorMode}>
           {colorMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
       </Toolbar>

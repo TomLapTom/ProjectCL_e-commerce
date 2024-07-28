@@ -11,11 +11,11 @@
     "server": "node server/server.cjs"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@hookform/resolvers": "^3.3.4",
-    "@mui/icons-material": "^5.15.9",
-    "@mui/material": "^5.15.9",
+    "@mui/icons-material": "^5.16.5",
+    "@mui/material": "^5.16.5",
     "@tanstack/react-query": "^5.17.19",
     "json-server": "0.17.4",
     "json-server-auth": "^2.1.0",

@@ -8,6 +8,7 @@ import { Footer } from './components/footer';
 import { useMemo } from 'react';
 import { Login } from './pages/login';
 import { SignUp } from './pages/sign-up';
+import { useColorMode } from './context/color-mode/color-mode-context';
 
 const AppStructure = () => {
   return (
@@ -22,9 +23,9 @@ const AppStructure = () => {
 };
 
 export const App = () => {
-  const colorMode = 'dark';
+  const { mode } = useColorMode();
 
-  const theme = useMemo(() => createTheme({ palette: { mode: colorMode } }), [colorMode]);
+  const theme = useMemo(() => createTheme({ palette: { mode } }), [mode]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -39,7 +40,7 @@ export const App = () => {
             <Route path="/sign-up" element={<SignUp />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter>s
     </ThemeProvider>
   );
 };
